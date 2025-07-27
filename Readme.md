@@ -1,49 +1,59 @@
-# Личный проект «Readme»
+# Personal Project «Readme»
 
-- Студент: [Anton Paskanny](https://up.htmlacademy.ru/nodejs-2/6/user/107440).
-- Наставник: [Андрей Осипук](https://htmlacademy.ru/profile/id616431).
-
----
-
-_Не удаляйте и не изменяйте папки и файлы:_
-_`.editorconfig`, `.gitattributes`, `.gitignore`._
+- Student: [Anton Paskanny](https://up.htmlacademy.ru/nodejs-2/6/user/107440).
+- Mentor: [Andrey Osipuk](https://www.linkedin.com/in/andrey-osipuk-1b0917192/).
 
 ---
 
-## Памятка
+## About
 
-### 1. Зарегистрируйтесь на Гитхабе
+**Readme** is a simple headless blog engine built using microservices architecture and the modern Nest.js framework. The project consists of several microservices, each solving a specific task.
 
-Если у вас ещё нет аккаунта на [github.com](https://github.com/join), скорее зарегистрируйтесь.
+## Project Overview
 
-### 2. Создайте форк
+This is a backend for a multi-user blog platform. The main features include multiple publication formats and the ability to subscribe to other users' updates. User subscriptions influence the content feed.
 
-Откройте репозиторий и нажмите кнопку «Fork» в правом верхнем углу. Репозиторий из Академии будет скопирован в ваш аккаунт.
+## Project Structure
 
-<img width="769" alt="Press 'Fork'" src="https://cloud.githubusercontent.com/assets/259739/20264045/a1ddbf40-aa7a-11e6-9a1a-724a1c0123c8.png">
+- **`project`** - Backend microservices (Nest.js, TypeScript, Nx monorepo)
+- **`markup`** - Frontend reference (HTML, CSS, JS) - provided for API design guidance (backend-only development)
 
-Получится вот так:
+## Technical Architecture
 
-<img width="769" alt="Forked" src="https://cloud.githubusercontent.com/assets/259739/20264122/f63219a6-aa7a-11e6-945a-89818fc7c014.png">
+### Microservices Architecture
+The project uses a microservices architecture where each service handles a specific domain:
+- **Account Service** - User authentication and management
+- **Blog Service** - Content management and publications
+- **File Storage Service** - File uploads and media handling
+- **Notification Service** - Email notifications and alerts
+- **API Gateway** - Request routing and aggregation
 
-### 3. Клонируйте репозиторий на свой компьютер
+### Technology Stack
+- **Backend Framework**: Nest.js (Node.js)
+- **Language**: TypeScript
+- **Monorepo Management**: Nx
+- **Databases**: MongoDB, PostgreSQL (per service requirements)
+- **Authentication**: JWT-based
+- **File Handling**: Multer for uploads
+- **Messaging**: RabbitMQ for inter-service communication
+- **Documentation**: Swagger/OpenAPI
 
-Будьте внимательны: нужно клонировать свой репозиторий (форк), а не репозиторий Академии. Также обратите внимание, что клонировать репозиторий нужно через SSH, а не через HTTPS. Нажмите зелёную кнопку в правой части экрана, чтобы скопировать SSH-адрес вашего репозитория:
+### Key Features
+- User registration and JWT authentication
+- Multiple publication types (video, text, quote, photo, link)
+- Content management (CRUD operations)
+- File uploads for blog posts
+- Comments and likes system
+- User subscriptions and feeds
+- Email notifications
+- Search functionality
+- Pagination and sorting
+- Tag categorization
 
-<img width="769" alt="SSH" src="https://cloud.githubusercontent.com/assets/259739/20264180/42704126-aa7b-11e6-9ab4-73372b812a53.png">
+### Development Approach
+- Each microservice can have its own database
+- Services are developed independently but share common libraries
+- API contracts and resource design are determined by the developer
+- Full frontend markup is provided for reference (backend-only development)
 
-Клонировать репозиторий можно так:
-
-```
-git clone SSH-адрес_вашего_форка
-```
-
-Команда клонирует репозиторий на ваш компьютер и подготовит всё необходимое для старта работы.
-
-### 4. Начинайте обучение!
-
----
-
-<a href="https://htmlacademy.ru/profession/fullstack"><img align="left" width="50" height="50" title="HTML Academy" src="https://up.htmlacademy.ru/static/img/intensive/nodejs/logo-for-github-2.png"></a>
-
-Репозиторий создан для обучения на профессиональном онлайн‑курсе «[Node.js. Проектирование веб-сервисов](https://htmlacademy.ru/profession/fullstack)» от [HTML Academy](https://htmlacademy.ru).
+The repository was created for learning on the professional online course «[Node.js. Web Services Design](https://htmlacademy.ru/profession/fullstack)» from [HTML Academy](https://htmlacademy.ru)."

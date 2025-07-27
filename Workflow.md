@@ -1,85 +1,85 @@
-# Как работать над проектом
+# How to work on the project
 
-## Окружение
+## Environment
 
-Для удобства работы над проектом используются инструменты из **Node.js** и **npm**. Все необходимые настройки произведены. Убедитесь, что на рабочем компьютере установлена **Node.js**, соответсвтующая актуальной версии. Актуальная версия **Node.js** указана в файле `package.json` в поле `node`. После, в терминале, перейти в директорию с проектом и _единожды_ запустите команду:
+For convenience when working on the project, tools from **Node.js** and **npm** are used. All necessary settings have been made. Make sure that **Node.js** corresponding to the current version is installed on your work computer. The current version of **Node.js** is specified in the `package.json` file in the `node` field. After that, in the terminal, go to the project directory and run the command _once_:
 
 ```bash
 npm install
 ```
 
-Данная команда запустит процесс установки зависимостей проекта из **npm**.
+This command will start the process of installing project dependencies from **npm**.
 
-### Сценарии
+### Scripts
 
-После создания проекта вам доступны следующие сценарии.
+After creating the project, the following scripts are available to you.
 
-#### Компиляция проекта
+#### Compiling the project
 
 ```bash
 npm run compile
 ```
 
-Во время выполнения инструкций по компиляции проекта, в корне проекта создается директория `dist`, в которую будут помещены результирующие файлы.
+During the execution of project compilation instructions, a `dist` directory is created in the project root, into which the resulting files will be placed.
 
-#### Очистка проекта
+#### Cleaning the project
 
 ```bash
 npm run clean
 ```
 
-Во время выполения инструкции по очистке проекта, директория `dist`, которая предназначена для хранения результирующих файлов, будет удалена.
+During the execution of the project cleaning instruction, the `dist` directory, which is intended for storing the resulting files, will be deleted.
 
-#### Сборка проекта
+#### Building the project
 
 ```bash
 npm run build
 ```
 
-В процессе сборки приложения, будут выполнены инструкции «Очистка проекта» и «Компиляция проекта». 
+During the application build process, the "Cleaning the project" and "Compiling the project" instructions will be executed.
 
-#### Проверка линтером
+#### Linter check
 
 ```bash
 npm run lint
 ```
 
-Запуск проверки проекта статическим анализатором кода **ESLint**.
+Launching a project check with the **ESLint** static code analyzer.
 
-Анализ кода производится только в файлах, которые находятся в директории `src`.
+Code analysis is performed only in files that are located in the `src` directory.
 
-**Обратите внимание**, при запуске данной команды, ошибки выводятся в терминал.
+**Please note** that when running this command, errors are output to the terminal.
 
-#### Запуск REPL
+#### Running REPL
 
 ```bash
 npm run ts
 ```
 
-Запуск `ts-node` позволяет вам напрямую выполнять код TypeScript на NodeJS без предварительной компиляции. 
+Running `ts-node` allows you to directly execute TypeScript code on NodeJS without prior compilation.
 
-#### Запуск проекта
+#### Running the project
 
 ```bash
 npm start
 ```
 
-В процессе запуска проекта будет выполнен процесс «Сборки проекта» и запуска результирующего кода.
+During the project startup process, the "Building the project" process will be executed and the resulting code will be launched.
 
-## Структура проекта
+## Project structure
 
-### Директория `src`
+### `src` directory
 
-В директории размещаются исходный код проекта: компоненты, модули и так далее. Структура директории `src` может быть произвольной.
+The source code of the project is located in this directory: components, modules, and so on. The structure of the `src` directory can be arbitrary.
 
-### Файл `Readme.md`
+### `Readme.md` file
 
-Файл, содержащий инструкции по работе с учебным репозиторием.
+A file containing instructions for working with the educational repository.
 
-### Файл `Contributing.md`
+### `Contributing.md` file
 
-Файл, содержащий советы и инструкции по внесению изменений в учебный репозиторий.
+A file containing tips and instructions for making changes to the educational repository.
 
-### Остальное
+### Everything else
 
-Все остальные файлы в проекте являются служебными. Пожалуйста, не удаляйте и не изменяйте их самовольно. Только если того требует задание или наставник.
+All other files in the project are service files. Please do not delete or modify them on your own. Only if required by the assignment or mentor.
