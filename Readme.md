@@ -16,7 +16,11 @@ This is a backend for a multi-user blog platform. The main features include mult
 ## Project Structure
 
 - **`project`** - Backend microservices (Nest.js, TypeScript, Nx monorepo)
-- **`markup`** - Frontend reference (HTML, CSS, JS) - provided for API design guidance (backend-only development)
+- **`markup`** - Frontend reference (HTML, CSS, JS) - provided for API design guidance
+
+## Architecture Diagram
+
+![Microservices Architecture](schema/microservices-schema-iteration-1.png)
 
 ## Technical Architecture
 
@@ -56,4 +60,4 @@ The project uses a microservices architecture where each service handles a speci
 - API contracts and resource design are determined by the developer
 - Full frontend markup is provided for reference (backend-only development)
 
-The repository was created for learning on the professional online course «[Node.js. Web Services Design](https://htmlacademy.ru/profession/fullstack)» from [HTML Academy](https://htmlacademy.ru)."
+The repository was created for learning on the professional online course [Node.js. Web Services Design](https://htmlacademy.ru/profession/fullstack) from [HTML Academy](https://htmlacademy.ru).
