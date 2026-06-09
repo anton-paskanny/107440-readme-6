@@ -1,11 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import {
-  IsMongoId,
-  IsOptional,
-  IsString,
-  MaxLength,
-  MinLength,
-} from 'class-validator';
+import { MaxLength, MinLength } from 'class-validator';
 import { AuthenticationValidateMessage } from '../authentication-module/authentication.constant';
 
 export class ChangePasswordDto {
@@ -25,8 +19,4 @@ export class ChangePasswordDto {
   @MaxLength(12, { message: AuthenticationValidateMessage.MaxPasswordLength })
   public newPassword: string;
 
-  @IsString()
-  @IsMongoId()
-  @IsOptional()
-  public userId?: string;
 }

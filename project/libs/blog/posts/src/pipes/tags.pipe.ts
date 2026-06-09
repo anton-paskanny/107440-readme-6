@@ -17,14 +17,11 @@ export class TagsValidationPipe implements PipeTransform {
       }
     });
 
-    // Step 2: Split tags into individual words and filter out invalid tags
+    // Step 2: Reject tags that contain spaces
     tags.forEach((tag) => {
-      const words = tag.split(/\s+/);
-      words.forEach((word) => {
-        if (/\s/.test(word)) {
-          throw new BadRequestException(`Tag "${tag}" contains spaces.`);
-        }
-      });
+      if (/\s/.test(tag)) {
+        throw new BadRequestException(`Tag "${tag}" contains spaces.`);
+      }
     });
 
     // Step 3: Remove duplicates and Step 4: Transform tags to lowercase

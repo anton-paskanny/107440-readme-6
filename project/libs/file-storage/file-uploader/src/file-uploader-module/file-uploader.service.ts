@@ -46,13 +46,13 @@ export class FileUploaderService {
     try {
       const uploadDirectoryPath = this.getUploadDirectoryPath();
       const subDirectory = this.getSubUploadDirectoryPath();
-      const fileExtension = extension(file.mimetype);
+      const fileExtension = extension(file.mimetype) || file.originalname.split('.').pop().toLowerCase();
       const filename = `${randomUUID()}.${fileExtension}`;
 
       const path = this.getDestinationFilePath(filename);
 
       await ensureDir(join(uploadDirectoryPath, subDirectory));
-      await writeFile(path, file.buffer);
+      await writeFile(path, new Uint8Array(file.buffer));
 
       return {
         fileExtension,

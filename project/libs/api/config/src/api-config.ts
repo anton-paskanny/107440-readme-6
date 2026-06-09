@@ -30,7 +30,7 @@ function getConfig(): ApplicationConfig {
     users: process.env.USERS_SERVICE_URL,
     blog: process.env.BLOG_SERVICE_URL,
     notify: process.env.NOTIFY_SERVICE_URL,
-    fileStorage: process.env.FILE_STORAGE_SERVICE_URl,
+    fileStorage: process.env.FILE_STORAGE_SERVICE_URL,
     port: parseInt(process.env.PORT || `${DEFAULT_PORT}`, 10),
   };
 

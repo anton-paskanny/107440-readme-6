@@ -68,7 +68,7 @@ export class BlogPostService {
 
     let hasTagsChanged = false;
 
-    for (const [key, value] of Object.entries(dto.postTypeFields)) {
+    for (const [key, value] of Object.entries(dto.postTypeFields ?? {})) {
       if (
         value !== undefined &&
         key !== '' &&
@@ -178,7 +178,7 @@ export class BlogPostService {
       throw new PostNotFoundException(postId);
     }
 
-    if (userId === existsPost.userId) {
+    if (userId === existsPost.userId || userId === existsPost.originalUserId) {
       throw new ConflictException(POST_REPOST_USER_MISMATCH_ERROR);
     }
 
@@ -198,7 +198,7 @@ export class BlogPostService {
       isReposted: true,
       originalPostId: existsPost.id,
       originalPostTypeFieldsId: existsPost.postTypeFields?.id,
-      originalUserId: existsPost.userId,
+      originalUserId: existsPost.originalUserId ?? existsPost.userId,
       postTypeFields: existsPost.postTypeFields,
       userId,
     };

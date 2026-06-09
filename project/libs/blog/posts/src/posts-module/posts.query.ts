@@ -17,7 +17,8 @@ import {
 } from './posts.constant';
 
 export class BlogPostQuery {
-  @Transform(({ value }) => +value || DEFAULT_POST_COUNT_LIMIT)
+  // `|| DEFAULT` would pass negative numbers through (truthy), so we check > 0 explicitly
+  @Transform(({ value }) => +value > 0 ? +value : DEFAULT_POST_COUNT_LIMIT)
   @IsNumber()
   @IsOptional()
   public limit = DEFAULT_POST_COUNT_LIMIT;
