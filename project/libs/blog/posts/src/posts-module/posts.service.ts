@@ -140,7 +140,7 @@ export class BlogPostService {
       (userIdFromArr) => userIdFromArr !== userId
     );
 
-    existsPost.likesCount -= 1;
+    existsPost.likesCount = existsPost.likes.length;
 
     await this.blogPostRepository.update(existsPost);
 

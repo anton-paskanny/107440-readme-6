@@ -242,7 +242,7 @@ export class BlogController {
   @Get('/search')
   public async searchByTitle(@Query('title') title: string) {
     const { data } = await this.httpService.axiosRef.get(
-      `${ApplicationServiceURL.Blog}/searc?title=${title}`
+      `${ApplicationServiceURL.Blog}/search?title=${title}`
     );
 
     return data;

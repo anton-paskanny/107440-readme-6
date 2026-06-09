@@ -32,6 +32,6 @@ export class RefreshTokenRepository extends BaseMongoRepository<
   }
 
   public async deleteExpiredTokens(): Promise<void> {
-    this.model.deleteMany({ expiresIn: { $lt: new Date() } });
+    await this.model.deleteMany({ expiresIn: { $lt: new Date() } });
   }
 }

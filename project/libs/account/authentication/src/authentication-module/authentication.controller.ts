@@ -54,8 +54,8 @@ export class AuthenticationController {
   public async signup(@Body() dto: SignUpUserDto) {
     const newUser = await this.authService.register(dto);
 
-    //const { email, firstname, lastname } = newUser;
-    //await this.notifyService.registerSubscriber({ email, firstname, lastname });
+    const { email, firstname, lastname } = newUser;
+    await this.notifyService.registerSubscriber({ email, firstname, lastname });
 
     return newUser.toPOJO();
   }
@@ -102,8 +102,11 @@ export class AuthenticationController {
   })
   @UseGuards(JwtAuthGuard)
   @Post('/changePassword')
-  public async changePassword(@Body() dto: ChangePasswordDto) {
-    const updatedUser = await this.authService.changePassword(dto.userId, dto);
+  public async changePassword(
+    @Req() { user }: RequestWithTokenPayload,
+    @Body() dto: ChangePasswordDto
+  ) {
+    const updatedUser = await this.authService.changePassword(user.sub, dto);
     return updatedUser.toPOJO();
   }
 
@@ -130,6 +133,7 @@ export class AuthenticationController {
   @ApiResponse({
     status: HttpStatus.OK,
   })
+  @UseGuards(JwtAuthGuard)
   @Patch('avatar')
   public async uploadAvatar(
     @Body() body: UserAvatarDto,
